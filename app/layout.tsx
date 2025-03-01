@@ -8,8 +8,8 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "BuildMaster Construction",
-  description: "Your trusted partner for quality construction projects",
+  title: "Constructora EV",
+  description: "Tu compañero de confianza para construcciones de calidad",
     generator: 'v0.dev'
 }
 
