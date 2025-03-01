@@ -1,57 +1,25 @@
-import Link from "next/link"
-import { Facebook, Twitter, Instagram } from "lucide-react"
+"use client"
 
-const Header = () => {
+import Link from 'next/link';
+import HamburgerMenu from './HamburgerMenu';
+
+export default function Header() {
   return (
-    <header className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold">
-          Eduardo Vargas & Cia
-        </Link>
-        <nav>
-          <ul className="flex space-x-6">
-            <li>
-              <Link href="/" className="hover:text-yellow-400">
-                Inicio
-              </Link>
-            </li>
-            <li>
-              <Link href="/sobre-nosotros" className="hover:text-yellow-400">
-                Sobre Nosotros
-              </Link>
-            </li>
-            <li>
-              <Link href="/servicios" className="hover:text-yellow-400">
-                Servicios
-              </Link>
-            </li>
-            <li>
-              <Link href="/proyectos" className="hover:text-yellow-400">
-                Proyectos
-              </Link>
-            </li>
-            <li>
-              <Link href="/contacto" className="hover:text-yellow-400">
-                Contacto
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="flex space-x-4">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <Facebook className="w-6 h-6" />
-          </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <Twitter className="w-6 h-6" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <Instagram className="w-6 h-6" />
-          </a>
+    <header className="bg-gray-900 text-white shadow z-50"> {/* Cambiar el fondo a gris oscuro y el texto a blanco */}
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="text-2xl font-bold">
+          <Link href="/">ConstructoraEV</Link> {/* Cambiar el texto a blanco */}
         </div>
+        <nav className="hidden md:flex space-x-4"> {/* Mostrar solo en pantallas medianas y grandes */}
+          <Link href="/" className="text-white hover:text-yellow-400">Inicio</Link>
+          <Link href="/sobre-nosotros" className="text-white hover:text-yellow-400">Sobre Nosotros</Link>
+          <Link href="/servicios" className="text-white hover:text-yellow-400">Servicios</Link>
+          <Link href="/proyectos" className="text-white hover:text-yellow-400">Proyectos</Link>
+          <Link href="/contacto" className="text-white hover:text-yellow-400">Contacto</Link>
+        </nav>
+        <HamburgerMenu /> {/* Mostrar solo en dispositivos móviles */}
       </div>
     </header>
-  )
+  );
 }
-
-export default Header
 
